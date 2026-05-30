@@ -113,12 +113,14 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <a href="assets/figures/Quantitative comparison of results.pdf">
-    <img src="assets/figures/Quantitative comparison of results.svg" alt="Quantitative comparison of results" width="900">
-  </a>
+  <video src="assets/figures/GBR_paper_result.mp4" width="900" autoplay muted loop playsinline controls>
+    Your browser does not support the video tag.
+  </video>
 </p>
 
 <p align="center">
+  <a href="assets/figures/GBR_paper_result.mp4">Open MP4</a>
+  |
   <a href="assets/figures/Quantitative comparison of results.pdf">Open PDF</a>
 </p>
 
