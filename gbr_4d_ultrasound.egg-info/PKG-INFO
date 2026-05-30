@@ -1,0 +1,178 @@
+Metadata-Version: 2.4
+Name: gbr-4d-ultrasound
+Version: 0.1.0
+Summary: Minimal Global-Basis Residual implementation for 4D freehand ultrasound reconstruction
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: torch>=2.1
+Dynamic: license-file
+
+# GBR-4D-Ultrasound
+
+<p align="center">
+  <a href="#project-page">
+    <img src="https://img.shields.io/badge/Project%20Page-Repository-blue?style=for-the-badge" alt="Project Page badge">
+  </a>
+  <a href="#paper">
+    <img src="https://img.shields.io/badge/Paper-Coming%20Soon-6c757d?style=for-the-badge" alt="Paper badge">
+  </a>
+  <a href="#dataset">
+    <img src="https://img.shields.io/badge/Data-Coming%20Soon-b8860b?style=for-the-badge" alt="Data badge">
+  </a>
+  <a href="#citation">
+    <img src="https://img.shields.io/badge/Citation-BibTeX-2e8b57?style=for-the-badge" alt="Citation badge">
+  </a>
+</p>
+
+Official method repository for the paper
+
+**Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound**
+
+## Project Page
+
+GBR-4D-Ultrasound is a compact public release of the method core for 4D gastric reconstruction from freehand ultrasound. The repository is organized as a lightweight project page plus a minimal runnable implementation of nonlinear phase canonicalization, confidence-aware observation aggregation, and the Global-Basis Residual dynamic surface model.
+
+## Teaser
+
+<p align="center">
+  <strong>Figure 1.</strong> Overview of the proposed pipeline for phase canonicalization, confidence-aware observation aggregation, and Global-Basis Residual dynamic reconstruction.
+</p>
+
+<p align="center">
+  <a href="assets/figures/pipeline_overview.pdf">Open PDF</a>
+</p>
+
+## Abstract
+
+Freehand ultrasound offers a practical route toward bedside gastric motility assessment, yet robust 4D reconstruction remains challenging because observations are sparse, cycle phases are not directly comparable, and acquisition quality varies substantially across time and view. GBR-4D-Ultrasound addresses this problem with a structured pipeline that first canonicalizes temporal phase across cycles, then aggregates heterogeneous observations with reliability-aware weighting, and finally reconstructs dynamic geometry through a shared-topology Global-Basis Residual representation. This public release exposes the core method path used to demonstrate the central modeling idea in the accompanying paper.
+
+The released representation is
+
+$$
+V(\phi) = V_0 + \bar{\Delta} + \sum_{r=1}^{R} \alpha_r(\phi) B_r + R_\theta(V_0, \phi)
+$$
+
+where $V_0$ is the shared reference topology, $B_r$ are global motion bases, $\alpha_r(\phi)$ are phase-conditioned coefficients, and $R_\theta$ is a local residual field.
+
+## Key Contributions
+
+- Structured dynamic reconstruction with a shared reference topology instead of phase-wise independent fitting.
+- Nonlinear cycle canonicalization that enables cross-cycle phase comparability.
+- Reliability-aware observation pooling for heterogeneous freehand ultrasound acquisitions.
+- A minimal public implementation with one runnable demo and one exported result artifact.
+
+## Paper
+
+The manuscript is currently under final preparation for public release.
+
+- Title: **Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound**
+- Status: public preprint link to be added
+- Repository role: minimal method implementation accompanying the paper
+
+## Method Figures
+
+### Weighted Phase-Set Intuition
+
+<p align="center">
+  <strong>Figure 2.</strong> Conceptual illustration of the phase-set formulation, where geometric evidence from multiple cycles is pooled within a canonical phase domain under continuous reliability weighting.
+</p>
+
+<p align="center">
+  <a href="assets/figures/phase_set_concept.pdf">Open PDF</a>
+</p>
+
+### GBR Dynamic Model
+
+<p align="center">
+  <strong>Figure 3.</strong> Hierarchical dynamic representation of the Global-Basis Residual model, combining a shared reference topology, low-rank global motion bases, and phase-conditioned local residual deformation.
+</p>
+
+<p align="center">
+  <a href="assets/figures/gbr_model.pdf">Open PDF</a>
+</p>
+
+These figures summarize the core methodological flow without relying on large supplementary assets: observations are pooled in a canonical phase domain under reliability-aware weighting, then absorbed by a structured dynamic surface model with explicit global and local deformation factors.
+
+## Main Results
+
+Across the task-specific benchmark comprising approximately 280 simulated instances, the proposed method delivers the best overall quantitative performance in both nominal and degraded observation regimes. Relative to the strongest competing baselines, the primary geometry-accuracy and temporal-consistency criteria improve by approximately 17.0% to 22.2%, supporting the claim that phase canonicalization and structured deformation modeling contribute complementary gains.
+
+### Standard Observation Setting
+
+<p align="center">
+  <strong>Figure 4.</strong> Quantitative comparison under the standard observation setting, where GBR-4D-Ultrasound achieves the strongest aggregate accuracy among the evaluated reconstruction strategies.
+</p>
+
+<p align="center">
+  <a href="assets/figures/clean_main_results.pdf">Open PDF</a>
+</p>
+
+### Robustness Under Degraded Observations
+
+<p align="center">
+  <strong>Figure 5.</strong> Robustness analysis under sparse-view, pose-perturbed, and image-degraded conditions, indicating that the proposed method preserves a clear performance margin as observation quality deteriorates.
+</p>
+
+<p align="center">
+  <a href="assets/figures/robustness_main_results.pdf">Open PDF</a>
+</p>
+
+### Ablation Summary
+
+<p align="center">
+  <strong>Figure 6.</strong> Ablation study isolating the contributions of phase alignment, confidence-aware supervision, structured motion decomposition, and temporal regularization.
+</p>
+
+<p align="center">
+  <a href="assets/figures/ablation_effect_plot.pdf">Open PDF</a>
+</p>
+
+Taken together, these results indicate that the observed improvement is not attributable to a single design choice. Instead, performance gains emerge from the joint effect of canonical phase alignment, reliability-aware observation pooling, structured low-rank motion modeling, and temporal regularization.
+
+## Quick Start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python scripts/run_demo.py
+```
+
+The demo generates a synthetic periodic surface sequence, canonicalizes timestamps into a standard phase domain, builds weighted phase sets, optimizes the GBR model, and exports a summary file to `demo/outputs/demo_summary.json`.
+
+## Output
+
+Only one export path is intentionally kept in this public release:
+
+- `demo/outputs/demo_summary.json`
+
+The exported JSON contains fitted phase centers, optimization history, per-phase vertex RMSE against synthetic ground truth, and aggregate demo statistics.
+
+## Dataset
+
+The full benchmark dataset is **not included** in this repository.
+
+- Public benchmark release: **coming soon**
+- Data card and access notes: **to be added**
+- Current repo status: synthetic demo only
+
+This placeholder is intentional so the repository can be published before the external dataset package is finalized.
+
+## Citation
+
+If you use this repository, please cite the accompanying paper. GitHub citation metadata is also provided in `CITATION.cff`.
+
+```bibtex
+@article{liu2026gbr4dultrasound,
+  title   = {Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound},
+  author  = {To be finalized},
+  journal = {To be updated},
+  year    = {2026}
+}
+```
+
+## License
+
+This repository ships with the **BSD 3-Clause License**.

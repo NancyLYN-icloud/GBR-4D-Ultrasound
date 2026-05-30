@@ -30,7 +30,13 @@ GBR-4D-Ultrasound is a compact public release of the method core for 4D gastric 
 </p>
 
 <p align="center">
-  <a href="assets/figures/pipeline_overview.pdf">Open PDF</a>
+  <a href="assets/figures/method_pipeline_overview.pdf">
+    <img src="assets/figures/method_pipeline_overview.svg" alt="Pipeline overview" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/figures/method_pipeline_overview.pdf">Open PDF</a>
 </p>
 
 ## Abstract
@@ -69,7 +75,13 @@ The manuscript is currently under final preparation for public release.
 </p>
 
 <p align="center">
-  <a href="assets/figures/phase_set_concept.pdf">Open PDF</a>
+  <a href="assets/figures/observation_quality_distribution.pdf">
+    <img src="assets/figures/observation_quality_distribution.svg" alt="Weighted phase-set intuition" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/figures/observation_quality_distribution.pdf">Open PDF</a>
 </p>
 
 ### GBR Dynamic Model
@@ -79,7 +91,13 @@ The manuscript is currently under final preparation for public release.
 </p>
 
 <p align="center">
-  <a href="assets/figures/gbr_model.pdf">Open PDF</a>
+  <a href="assets/figures/GBR-model.pdf">
+    <img src="assets/figures/GBR-model.svg" alt="GBR dynamic model" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/figures/GBR-model.pdf">Open PDF</a>
 </p>
 
 These figures summarize the core methodological flow without relying on large supplementary assets: observations are pooled in a canonical phase domain under reliability-aware weighting, then absorbed by a structured dynamic surface model with explicit global and local deformation factors.
@@ -95,7 +113,13 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <a href="assets/figures/clean_main_results.pdf">Open PDF</a>
+  <a href="assets/figures/Quantitative comparison of results.pdf">
+    <img src="assets/figures/Quantitative comparison of results.svg" alt="Quantitative comparison of results" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/figures/Quantitative comparison of results.pdf">Open PDF</a>
 </p>
 
 ### Robustness Under Degraded Observations
@@ -105,13 +129,25 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <a href="assets/figures/robustness_main_results.pdf">Open PDF</a>
+  <a href="assets/figures/real-data distribution figure.pdf">
+    <img src="assets/figures/real-data distribution figure.svg" alt="Robustness under degraded observations" width="900">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/figures/real-data distribution figure.pdf">Open PDF</a>
 </p>
 
 ### Ablation Summary
 
 <p align="center">
   <strong>Figure 6.</strong> Ablation study isolating the contributions of phase alignment, confidence-aware supervision, structured motion decomposition, and temporal regularization.
+</p>
+
+<p align="center">
+  <a href="assets/figures/ablation_effect_plot.pdf">
+    <img src="assets/figures/ablation_effect_plot.svg" alt="Ablation summary" width="900">
+  </a>
 </p>
 
 <p align="center">
