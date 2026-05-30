@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: 4D-Ultrasound-Modeling-System (4D-UMS)
+message: If you use this code, please cite the accompanying paper.
+type: software
+authors:
+  - family-names: Liu
+    given-names: Yanan
+  - family-names: Placeholder
+    given-names: Coauthor
+repository-code: <GITHUB_REPOSITORY_URL>
+url: <PROJECT_HOMEPAGE_URL>
+abstract: >-
+  Code release for structured neural spatiotemporal deformation modeling for
+  4D gastric reconstruction from freehand ultrasound.
+keywords:
+  - freehand ultrasound
+  - 4D reconstruction
+  - gastric motility
+  - dynamic surface reconstruction
+  - spatiotemporal deformation
+license: BSD-3-Clause
+preferred-citation:
+  type: article
+  title: Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound
+  authors:
+    - family-names: Liu
+      given-names: Yanan
+    - family-names: Placeholder
+      given-names: Coauthor
+  journal: <TO_BE_UPDATED>
+  year: 2026
+  doi: <TO_BE_UPDATED>
+  url: <PAPER_URL>

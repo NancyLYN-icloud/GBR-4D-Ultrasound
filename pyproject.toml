@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gbr-4d-ultrasound"
+version = "0.1.0"
+description = "Minimal Global-Basis Residual implementation for 4D freehand ultrasound reconstruction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "torch>=2.1",
+]
+
+[tool.setuptools]
+packages = ["gbr_4d_ums"]
