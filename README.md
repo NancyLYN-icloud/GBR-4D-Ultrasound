@@ -1,27 +1,40 @@
 # GBR-4D-Ultrasound
 
 <p align="center">
-  <a href="#project-page">
-    <img src="https://img.shields.io/badge/Project%20Page-Repository-blue?style=for-the-badge" alt="Project Page badge">
-  </a>
-  <a href="#paper">
-    <img src="https://img.shields.io/badge/Paper-Coming%20Soon-6c757d?style=for-the-badge" alt="Paper badge">
-  </a>
-  <a href="#dataset">
-    <img src="https://img.shields.io/badge/Data-Coming%20Soon-b8860b?style=for-the-badge" alt="Data badge">
-  </a>
-  <a href="#citation">
-    <img src="https://img.shields.io/badge/Citation-BibTeX-2e8b57?style=for-the-badge" alt="Citation badge">
-  </a>
+  <strong>Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound</strong>
 </p>
 
-Official method repository for the paper
+<p align="center">
+  GBR-4D-Ultrasound addresses 4D gastric reconstruction from sparse, phase-misaligned freehand ultrasound by combining nonlinear phase canonicalization, reliability-aware observation construction, and Global-Basis Residual spatiotemporal deformation modeling within a shared dynamic representation.
+</p>
 
-**Structured Neural Spatiotemporal Deformation Modeling for 4D Gastric Reconstruction From Freehand Ultrasound**
+<p align="center">
+  <a href="#paper"><strong>Venue</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#paper"><strong>Paper</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#dataset"><strong>Data</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#quick-start"><strong>Code</strong></a>
+</p>
+
+<p align="center">
+  <a href="#abstract"><strong>Abstract</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#key-contributions"><strong>Contributions</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#method-figures"><strong>Method</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#main-results"><strong>Results</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#quick-start"><strong>Quick Start</strong></a>
+  &nbsp;|&nbsp;
+  <a href="#citation"><strong>Citation</strong></a>
+</p>
 
 ## Project Page
 
-GBR-4D-Ultrasound is a compact public release of the method core for 4D gastric reconstruction from freehand ultrasound. The repository is organized as a lightweight project page plus a minimal runnable implementation of nonlinear phase canonicalization, confidence-aware observation aggregation, and the Global-Basis Residual dynamic surface model.
+GBR-4D-Ultrasound provides the public method core and compact project page for the proposed framework for 4D gastric reconstruction from freehand ultrasound. This release focuses on the main modeling pathway required to canonicalize heterogeneous temporal phases, construct phase-aligned observations under varying acquisition reliability, and recover dynamic gastric geometry with the Global-Basis Residual representation.
 
 ## Teaser
 
@@ -30,13 +43,7 @@ GBR-4D-Ultrasound is a compact public release of the method core for 4D gastric 
 </p>
 
 <p align="center">
-  <a href="assets/figures/method_pipeline_overview.pdf">
-    <img src="assets/figures/method_pipeline_overview.svg" alt="Pipeline overview" width="900">
-  </a>
-</p>
-
-<p align="center">
-  <a href="assets/figures/method_pipeline_overview.pdf">Open PDF</a>
+  <img src="assets/figures/method_pipeline_overview.svg" alt="Pipeline overview" width="900">
 </p>
 
 ## Abstract
@@ -68,20 +75,14 @@ The manuscript is currently under final preparation for public release.
 
 ## Method Figures
 
-### Weighted Phase-Set Intuition
+### Phase-Aligned Observation Construction
 
 <p align="center">
-  <strong>Figure 2.</strong> Conceptual illustration of the phase-set formulation, where geometric evidence from multiple cycles is pooled within a canonical phase domain under continuous reliability weighting.
+  <strong>Figure 2.</strong> Construction of phase-aligned observations, showing how heterogeneous measurements are reorganized into a canonical temporal domain before downstream dynamic reconstruction.
 </p>
 
 <p align="center">
-  <a href="assets/figures/observation_quality_distribution.pdf">
-    <img src="assets/figures/observation_quality_distribution.svg" alt="Weighted phase-set intuition" width="900">
-  </a>
-</p>
-
-<p align="center">
-  <a href="assets/figures/observation_quality_distribution.pdf">Open PDF</a>
+  <img src="assets/figures/Phase-Aligned Observation Construction.png" alt="Phase-aligned observation construction" width="900">
 </p>
 
 ### GBR Dynamic Model
@@ -91,16 +92,10 @@ The manuscript is currently under final preparation for public release.
 </p>
 
 <p align="center">
-  <a href="assets/figures/GBR-model.pdf">
-    <img src="assets/figures/GBR-model.svg" alt="GBR dynamic model" width="900">
-  </a>
+  <img src="assets/figures/GBR-model.svg" alt="GBR dynamic model" width="900">
 </p>
 
-<p align="center">
-  <a href="assets/figures/GBR-model.pdf">Open PDF</a>
-</p>
-
-These figures summarize the core methodological flow without relying on large supplementary assets: observations are pooled in a canonical phase domain under reliability-aware weighting, then absorbed by a structured dynamic surface model with explicit global and local deformation factors.
+These figures summarize the core methodological flow without relying on large supplementary assets: observations are first phase-aligned into a canonical temporal domain, then absorbed by a structured dynamic surface model with explicit global and local deformation factors.
 
 ## Main Results
 
@@ -116,12 +111,6 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
   <img src="assets/figures/GBR_paper_result.gif" alt="Quantitative comparison of results" width="900">
 </p>
 
-<p align="center">
-  <a href="assets/figures/GBR_paper_result.mp4">Open MP4</a>
-  |
-  <a href="assets/figures/Quantitative comparison of results.pdf">Open PDF</a>
-</p>
-
 ### Robustness Under Degraded Observations
 
 <p align="center">
@@ -129,13 +118,7 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <a href="assets/figures/real-data distribution figure.pdf">
-    <img src="assets/figures/real-data distribution figure.svg" alt="Robustness under degraded observations" width="900">
-  </a>
-</p>
-
-<p align="center">
-  <a href="assets/figures/real-data distribution figure.pdf">Open PDF</a>
+  <img src="assets/figures/real-data distribution figure.svg" alt="Robustness under degraded observations" width="900">
 </p>
 
 ### Ablation Summary
@@ -145,13 +128,7 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <a href="assets/figures/ablation_effect_plot.pdf">
-    <img src="assets/figures/ablation_effect_plot.svg" alt="Ablation summary" width="900">
-  </a>
-</p>
-
-<p align="center">
-  <a href="assets/figures/ablation_effect_plot.pdf">Open PDF</a>
+  <img src="assets/figures/ablation_effect_plot.svg" alt="Ablation summary" width="900">
 </p>
 
 Taken together, these results indicate that the observed improvement is not attributable to a single design choice. Instead, performance gains emerge from the joint effect of canonical phase alignment, reliability-aware observation pooling, structured low-rank motion modeling, and temporal regularization.
