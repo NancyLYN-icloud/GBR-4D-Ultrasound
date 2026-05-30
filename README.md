@@ -113,9 +113,7 @@ Across the task-specific benchmark comprising approximately 280 simulated instan
 </p>
 
 <p align="center">
-  <video src="assets/figures/GBR_paper_result.mp4" width="900" autoplay muted loop playsinline controls>
-    Your browser does not support the video tag.
-  </video>
+  <img src="assets/figures/GBR_paper_result.gif" alt="Quantitative comparison of results" width="900">
 </p>
 
 <p align="center">
